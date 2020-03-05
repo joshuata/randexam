@@ -72,6 +72,7 @@ DEFAULT_CONFIG = {
     "randomize_variants": True,
     "raw_scan_directory": "",
     "score_decimals": 1,
+    "vspace_height": 10,
 }
 
 ######################################################################
@@ -1186,7 +1187,7 @@ def write_exams(output_filename, library, K, Q, V, A, config):
                             out_f.write(r"\end{multicols}" + "\n")
                     if not config["one_page_per_question"]:
                         out_f.write(r"\end{minipage}" + "\n")
-                        out_f.write(r"\vspace{10em}" + "\n")
+                        out_f.write(r"\vspace{%iem}" % config["vspace_height"] + "\n")
                         out_f.write(r"\filbreak\vfil\penalty-200\vfilneg" + "\n\n")
 
                     qi += 1
